@@ -1,1 +1,17 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* HUD TOPO */
+.hud-top {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+}
+
+.hud-top img {
+  width: 120px;
