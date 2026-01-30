@@ -1,26 +1,57 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flip Mine</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e2f;
+  color: #fff;
+}
 
-  <!-- HUD TOPO -->
-  <div class="hud-top">
-    <img src="LOGO_FLIP_MINE.png" alt="Flip Mine Logo">
-  </div>
+/* HUD TOPO */
+.hud-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222244;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
 
-  <!-- CENA PRINCIPAL -->
-  <div class="game-room">
-    <!-- Logo na parede (grafite) -->
-    <img src="LOGO_FLIP_MINE.png" class="wall-logo" alt="Flip Mine Wall Logo">
+.hud-logo {
+  height: 50px;
+}
 
-    <!-- Personagem (placeholder) -->
-    <div class="player"></div>
-  </div>
+.coins {
+  font-size: 18px;
+}
 
-</body>
-</html>
+/* CENA PRINCIPAL */
+.game-room {
+  margin-top: 80px; /* Espaço pra HUD */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  position: relative;
+}
+
+/* Logo na parede */
+.wall-logo {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100px;
+  opacity: 0.5; /* efeito grafite */
+}
+
+/* Personagem */
+.player {
+  width: 50px;
+  height: 50px;
+  background-color: #f1c40f;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
