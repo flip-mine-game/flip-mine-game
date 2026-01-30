@@ -1,68 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Flip Mine Faucet</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f1220;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<meta charset="UTF-8">
+<title>Flip Mine Faucet</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f1220;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 
-    .container {
-      background: #1b1f3b;
-      border-radius: 12px;
-      padding: 20px;
-      width: 320px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.6);
-    }
+  .container {
+    background: #1b1f3b;
+    border-radius: 12px;
+    padding: 20px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    position: relative;
+    overflow: hidden;
+  }
 
-    .container img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
+  .container img.hero {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+  }
 
-    h1 {
-      margin: 10px 0;
-      font-size: 22px;
-    }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
 
-    p {
-      font-size: 14px;
-      opacity: 0.8;
-    }
+  h1 {
+    margin: 10px 0;
+    font-size: 22px;
+  }
 
-    button {
-      margin-top: 15px;
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      background: #00e676;
-      color: #000;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+  p {
+    font-size: 14px;
+    opacity: 0.8;
+  }
 
-    button:hover {
-      background: #00c853;
-    }
-  </style>
+  button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #00e676;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #00c853;
+  }
+
+  /* Painel do computador */
+  .monitor {
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    width: 120px;
+    height: 80px;
+    background: #222244;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #000;
+    animation: monitor-glow 2s infinite alternate;
+  }
+
+  @keyframes monitor-glow {
+    0% { box-shadow: 0 0 10px #000; }
+    100% { box-shadow: 0 0 20px #00ff99; }
+  }
+
+</style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- IMAGEM PRINCIPAL -->
-    <img src="img/hero.png" alt="Flip Mine Faucet">
+<div class="container">
+  <!-- Imagem do skatista / hero -->
+  <img src="img/hero.png" alt="Flip Mine Faucet" class="hero">
 
-    <h1>Flip Mine Faucet</h1>
-    <p>Minere recompensas gratuitamente
+  <h1>Flip Mine Faucet</h1>
+  <p>Minere recompensas
