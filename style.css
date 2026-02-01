@@ -1,60 +1,48 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Faucet Teste</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+  background: #0f172a;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
 
-  <div class="container">
-    <h1>🚰 Faucet Teste</h1>
-    <p>Receba moedas grátis a cada 60 segundos</p>
+.container {
+  width: 320px;
+  margin: 100px auto;
+  padding: 20px;
+  background: #020617;
+  border-radius: 10px;
+  text-align: center;
+}
 
-    <input type="text" placeholder="Endereço da carteira" id="wallet">
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+}
 
-    <button id="claimBtn">Coletar</button>
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background: #22c55e;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    <p id="msg"></p>
-    <p id="timer"></p>
-  </div>
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
 
-  <script>
-    let tempo = 60;
-    let bloqueado = false;
+#msg {
+  margin-top: 15px;
+}
 
-    const btn = document.getElementById("claimBtn");
-    const msg = document.getElementById("msg");
-    const timer = document.getElementById("timer");
-
-    btn.onclick = () => {
-      if (bloqueado) return;
-
-      const wallet = document.getElementById("wallet").value;
-      if (wallet === "") {
-        msg.innerText = "❌ Informe o endereço da carteira";
-        return;
-      }
-
-      bloqueado = true;
-      msg.innerText = "⏳ Pagamento em processamento...";
-      btn.disabled = true;
-
-      let intervalo = setInterval(() => {
-        tempo--;
-        timer.innerText = "Espere " + tempo + " segundos";
-
-        if (tempo <= 0) {
-          clearInterval(intervalo);
-          tempo = 60;
-          bloqueado = false;
-          btn.disabled = false;
-          msg.innerText = "✅ Faucet disponível novamente";
-          timer.innerText = "";
-        }
-      }, 1000);
-    };
-  </script>
-
-</body>
-</html>
+#timer {
+  margin-top: 10px;
+  color: #38bdf8;
+  }
