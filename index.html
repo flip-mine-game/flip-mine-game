@@ -2,18 +2,21 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Flip Mine</title>
+  <title>Flip Mine | Beta</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="login-body">
 
-  <div class="login-container">
-    <h1>Flip Mine</h1>
-    <input type="text" placeholder="Usuário" id="username">
-    <input type="password" placeholder="Senha" id="password">
-    <button onclick="login()">Entrar</button>
+  <div class="login-card">
+    <h1>FLIP MINE</h1>
+    <p class="tagline">Mine, evolua e domine o jogo</p>
+
+    <button class="btn google">Entrar com Google</button>
+    <button class="btn email" onclick="entrar()">Criar conta com e-mail</button>
+
+    <small>Projeto BETA • moedas e login fake</small>
   </div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
