@@ -1,14 +1,27 @@
 body {
   background: #0f172a;
-  font-family: Arial, sans-serif;
   color: #fff;
+  font-family: Arial, sans-serif;
 }
 
-.container {
-  width: 320px;
-  margin: 100px auto;
-  padding: 20px;
+.nav {
   background: #020617;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav a {
+  color: #38bdf8;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.box {
+  background: #020617;
+  width: 320px;
+  margin: 60px auto;
+  padding: 20px;
   border-radius: 10px;
   text-align: center;
 }
@@ -17,8 +30,6 @@ input {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  border-radius: 5px;
-  border: none;
 }
 
 button {
@@ -26,23 +37,19 @@ button {
   padding: 10px;
   margin-top: 15px;
   background: #22c55e;
-  color: #000;
-  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-button:disabled {
-  background: #555;
-  cursor: not-allowed;
-}
-
-#msg {
-  margin-top: 15px;
-}
-
-#timer {
+.ad {
+  background: #020617;
+  padding: 10px;
   margin-top: 10px;
-  color: #38bdf8;
-  }
+  border: 1px solid #1e293b;
+}
+
+.small {
+  font-size: 12px;
+  color: #94a3b8;
+}
