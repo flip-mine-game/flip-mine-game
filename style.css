@@ -43,3 +43,16 @@ body {
   left: 20px;
   width: 120px;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.cenario {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("img/cenario.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
