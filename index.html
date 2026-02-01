@@ -1,70 +1,36 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Flipmania Faucet</title>
-<style>
-body {
-  background:#0f172a;
-  color:white;
-  font-family:Arial, sans-serif;
-  text-align:center;
-  padding-top:50px;
-}
-h1 { color:#22c55e; }
-button {
-  padding:15px 30px;
-  font-size:18px;
-  background:#38bdf8;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-}
-#saldo { font-size:22px; margin:20px; color:#facc15; }
-#timer { margin:15px; color:#f87171; font-size:18px; }
-</style>
-</head>
-<body>
+let balance = localStorage.getItem("balance") || 0;
+let lastClaim = localStorage.getItem("lastClaim") || 0;
+const cooldown = 60; // segundos
 
-<h1>💧 Flipmania Faucet</h1>
-<p>Clique no botão para ganhar moedas</p>
+const balanceEl = document.getElementById("balance");
+const btn = document.getElementById("claimBtn");
+const timerEl = document.getElementById("timer");
 
-<div id="saldo">Saldo: 0 FLIP</div>
-<div id="timer">Pronto para ganhar!</div>
-<button id="btn" onclick="ganhar()">💰 Ganhar 10 FLIP</button>
+balanceEl.innerText = balance;
 
-<script>
-// Pega saldo e tempo do navegador (localStorage)
-let saldo = parseInt(localStorage.getItem("saldo")) || 0;
-let proximo = parseInt(localStorage.getItem("proximo")) || 0;
+function updateTimer() {
+  const now = Math.floor(Date.now() / 1000);
+  const diff = now - lastClaim;
 
-document.getElementById("saldo").innerText = "Saldo: " + saldo + " FLIP";
-
-function atualizar() {
-  let agora = Math.floor(Date.now() / 1000);
-  if (proximo > agora) {
-    let rest = proximo - agora;
-    document.getElementById("timer").innerText = "Aguarde " + rest + "s";
-    document.getElementById("btn").disabled = true;
+  if (diff >= cooldown) {
+    btn.disabled = false;
+    timerEl.innerText = "Pronto para ganhar!";
   } else {
-    document.getElementById("timer").innerText = "Pronto para ganhar!";
-    document.getElementById("btn").disabled = false;
+    btn.disabled = true;
+    timerEl.innerText = `Aguarde ${cooldown - diff}s`;
   }
 }
 
-function ganhar() {
-  let agora = Math.floor(Date.now() / 1000);
-  proximo = agora + 30; // cooldown 30 segundos
-  saldo += 10;
-  localStorage.setItem("saldo", saldo);
-  localStorage.setItem("proximo", proximo);
-  atualizar();
-  alert("Você ganhou 10 FLIP!");
-}
+btn.onclick = () => {
+  balance = parseInt(balance) + 10;
+  lastClaim = Math.floor(Date.now() / 1000);
 
-setInterval(atualizar, 1000);
-atualizar();
-</script>
+  localStorage.setItem("balance", balance);
+  localStorage.setItem("lastClaim", lastClaim);
 
-</body>
-</html>
+  balanceEl.innerText = balance;
+  updateTimer();
+};
+
+setInterval(updateTimer, 1000);
+updateTimer();
