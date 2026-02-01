@@ -2,28 +2,29 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>FlipMine Faucet</title>
+  <title>Flip Mine — Faucet</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="app">
+  <div class="container">
+    <h1>⛏️ Flip Mine</h1>
+    <p class="subtitle">Faucet • Mineração Fake • Protótipo</p>
 
-  <h1>⛏️ FlipMine Faucet</h1>
+    <div class="card">
+      <div class="miner">👷‍♂️</div>
+      <p class="balance">Saldo: <span id="saldo">0</span> Flips</p>
+      <button id="mineBtn">⛏️ Minerar 10 Flips</button>
+      <p id="timer"></p>
+    </div>
 
-  <div class="avatar">
-    <img id="miner" src="https://i.imgur.com/8QfQYQx.png" alt="Miner">
-    <p>Minerador</p>
+    <div class="panel">
+      <h2>📊 Painel</h2>
+      <p>Status: <span class="online">ONLINE</span></p>
+      <p>Modo: Faucet Fake</p>
+    </div>
   </div>
 
-  <div class="panel">
-    <p>💰 Saldo: <span id="balance">0</span> Flips</p>
-    <button id="claimBtn">Ganhar 10 Flips</button>
-    <p id="timer"></p>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
