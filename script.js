@@ -1,9 +1,15 @@
-function claim() {
-  document.getElementById("msg").innerText =
-    "⏳ Faucet em manutenção. Tente novamente mais tarde.";
+let saldo = 0;
+
+function entrar() {
+  window.location.href = "dashboard.html";
 }
 
-function viewAd() {
-  document.getElementById("ptcMsg").innerText =
-    "✅ Visualização registrada (simulação)";
+function claim() {
+  saldo += 0.01;
+  alert("Você ganhou FLIP fake!");
+}
+
+function ptc() {
+  saldo += 0.02;
+  alert("Anúncio fake assistido!");
 }
