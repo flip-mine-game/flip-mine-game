@@ -2,22 +2,32 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard</title>
+  <title>Flip Mine | Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="nav">
+<div class="sidebar">
+  <h2>Flip Mine</h2>
   <a href="dashboard.html">Dashboard</a>
   <a href="faucet.html">Faucet</a>
   <a href="ptc.html">PTC</a>
 </div>
 
-<div class="box">
-  <h2>📊 Painel</h2>
-  <p>Saldo: <strong>0.00000000 COIN</strong></p>
-  <p>Status: Ativo</p>
+<div class="content">
+  <h1>Dashboard</h1>
+  <p class="saldo">Saldo: <span id="saldo">0.000</span> FLIP</p>
+
+  <div class="cards">
+    <div class="card">🟢 Mineração</div>
+    <div class="card">🟡 Faucet</div>
+    <div class="card">🔵 PTC</div>
+    <div class="card">🟣 Missões</div>
+  </div>
+
+  <p class="beta">Protótipo • Tudo fake • Apenas visual</p>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
