@@ -1,55 +1,114 @@
-body {
-  background: #0f172a;
-  color: #fff;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
 
-.nav {
-  background: #020617;
-  padding: 10px;
+body {
+  background: #0b0b0f;
+  color: #fff;
+}
+
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-card {
+  background: #111;
+  padding: 40px;
+  border-radius: 12px;
   text-align: center;
+  box-shadow: 0 0 25px #00ffcc;
 }
 
-.nav a {
-  color: #38bdf8;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
+.login-card h1 {
+  color: #00ffcc;
 }
 
-.box {
-  background: #020617;
-  width: 320px;
-  margin: 60px auto;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
+.tagline {
+  margin: 10px 0 20px;
+  color: #aaa;
 }
 
-input {
+.btn {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 15px;
-  background: #22c55e;
+  padding: 12px;
+  margin: 8px 0;
   border: none;
-  font-weight: bold;
   cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
-.ad {
-  background: #020617;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #1e293b;
+.google {
+  background: #4285F4;
 }
 
-.small {
-  font-size: 12px;
-  color: #94a3b8;
+.email {
+  background: #00ffcc;
+  color: #000;
 }
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background: #111;
+  padding: 20px;
+  position: fixed;
+}
+
+.sidebar a {
+  display: block;
+  color: #00ffcc;
+  margin: 15px 0;
+  text-decoration: none;
+}
+
+.content {
+  margin-left: 220px;
+  padding: 40px;
+}
+
+.saldo {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #8000ff;
+}
+
+.center {
+  text-align: center;
+}
+
+.claim {
+  background: #00ff00;
+  color: #000;
+}
+
+.ptc-card {
+  background: #1a1a1a;
+  padding: 20px;
+  margin: 15px 0;
+  cursor: pointer;
+  border-left: 5px solid #00ffcc;
+}
+
+.beta {
+  margin-top: 30px;
+  color: #777;
+  }
