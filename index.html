@@ -1,36 +1,30 @@
-let balance = localStorage.getItem("balance") || 0;
-let lastClaim = localStorage.getItem("lastClaim") || 0;
-const cooldown = 60; // segundos
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Flip Mine Faucet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-const balanceEl = document.getElementById("balance");
-const btn = document.getElementById("claimBtn");
-const timerEl = document.getElementById("timer");
+<div class="container">
+  <img src="mascot.png" class="mascot">
+  <h1>Flip Mine Faucet</h1>
+  <p>Ganhe moedas grátis a cada intervalo</p>
 
-balanceEl.innerText = balance;
+  <div class="box">
+    <p>💰 Saldo:</p>
+    <h2><span id="balance">0</span> FLIP</h2>
 
-function updateTimer() {
-  const now = Math.floor(Date.now() / 1000);
-  const diff = now - lastClaim;
+    <button id="claimBtn">Ganhar 10 FLIP</button>
+    <p id="timer"></p>
+  </div>
 
-  if (diff >= cooldown) {
-    btn.disabled = false;
-    timerEl.innerText = "Pronto para ganhar!";
-  } else {
-    btn.disabled = true;
-    timerEl.innerText = `Aguarde ${cooldown - diff}s`;
-  }
-}
+  <footer>
+    © 2026 Flip Mine Faucet
+  </footer>
+</div>
 
-btn.onclick = () => {
-  balance = parseInt(balance) + 10;
-  lastClaim = Math.floor(Date.now() / 1000);
-
-  localStorage.setItem("balance", balance);
-  localStorage.setItem("lastClaim", lastClaim);
-
-  balanceEl.innerText = balance;
-  updateTimer();
-};
-
-setInterval(updateTimer, 1000);
-updateTimer();
+<script src="script.js"></script>
+</body>
+</html>
