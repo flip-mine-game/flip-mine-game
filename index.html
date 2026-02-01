@@ -2,51 +2,20 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Flip Mine Faucet</title>
+  <title>Login - Plataforma</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="header">
-  ⛏️ Flip Mine Faucet
-</div>
-
-<!-- LOGIN -->
-<div class="box" id="loginBox">
-  <h2>Entrar</h2>
+<div class="box">
+  <h2>🔐 Login</h2>
   <input type="text" placeholder="Usuário">
   <input type="password" placeholder="Senha">
-  <button onclick="login()">Entrar</button>
-  <p class="info">Protótipo • Faucet genérica</p>
+  <a href="dashboard.html">
+    <button>Entrar</button>
+  </a>
+  <p class="small">Projeto em desenvolvimento</p>
 </div>
-
-<!-- DASHBOARD -->
-<div class="box hidden" id="dashboard">
-  <h2>Painel</h2>
-
-  <div class="card">
-    💰 Saldo: <b id="saldo">100</b> FLIP
-  </div>
-
-  <div class="card">
-    ⏱️ Próximo claim: <b>05:00</b>
-  </div>
-
-  <button onclick="claim()">Claim Faucet</button>
-
-  <p class="info">⚠️ Faucet visual (não paga)</p>
-</div>
-
-<script>
-function login() {
-  document.getElementById("loginBox").classList.add("hidden");
-  document.getElementById("dashboard").classList.remove("hidden");
-}
-
-function claim() {
-  alert("Claim realizado (fake)");
-}
-</script>
 
 </body>
 </html>
