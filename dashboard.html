@@ -1,69 +1,45 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flip Mine Beta</title>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-body { background: linear-gradient(135deg,#111,#222); color:#fff; min-height:100vh; }
-header { height:60px; background:#111; border-bottom:2px solid #0f0; display:flex; align-items:center; padding:0 20px; }
-header nav a { margin-right:20px; color:#ccc; text-decoration:none; font-weight:bold; transition:0.3s; }
-header nav a:hover { color:#0f0; text-shadow:0 0 10px #0f0; }
-.container { display:grid; grid-template-columns:220px 1fr; min-height:calc(100vh - 60px); }
-.sidebar { background:#151515; border-right:2px solid #333; padding:15px; }
-.ad-box { background:#1f1f1f; border:1px dashed #0f0; height:120px; margin-bottom:15px; display:flex; align-items:center; justify-content:center; font-size:14px; color:#0f0; }
-.main { padding:20px; position:relative; overflow:hidden; }
-.room { position:relative; width:100%; height:420px; background: linear-gradient(180deg,#222,#111); border:2px solid #444; border-radius:12px; box-shadow: inset 0 0 40px rgba(0,0,0,0.9); }
-.neon { position:absolute; top:15px; left:20px; color:#0f0; font-weight:bold; text-shadow:0 0 15px #0f0; }
-.poster { position:absolute; right:20px; top:40px; width:120px; height:160px; background: linear-gradient(135deg,#f0f,#08f); display:flex; align-items:center; justify-content:center; font-size:12px; transform:rotate(-5deg); box-shadow:0 0 20px rgba(255,0,255,0.6); }
-.skate { position:absolute; bottom:20px; left:30px; width:120px; height:20px; background:#333; border-radius:20px; box-shadow:0 0 15px #0f0; }
-.character { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); width:120px; height:180px; background: linear-gradient(180deg,#444,#222); border-radius:10px; box-shadow:0 0 30px rgba(0,255,0,0.5); display:flex; align-items:center; justify-content:center; font-size:12px; color:#0f0; }
-.panels { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; margin-top:20px; }
-.panel { background:#1a1a1a; border:1px solid #333; padding:15px; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.7); cursor:pointer; }
-.panel h3 { color:#0f0; margin-bottom:10px; }
-@media(max-width:768px){ .container{ grid-template-columns:1fr; } .sidebar{ display:none; } }
-</style>
+  <meta charset="UTF-8">
+  <title>FLIP MINE – Dashboard</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header>
-<nav>
-<a href="#">Dashboard</a>
-<a href="#">Comprar</a>
-<a href="#">Short Link</a>
-<a href="#">Perfil</a>
-<a href="#">PTC</a>
-<a href="#">Games</a>
-<a href="#">Carteira</a>
-<a href="#">Faucet</a>
-<a href="#">Offerwalls</a>
-</nav>
-</header>
-<div class="container">
-<aside class="sidebar">
-<div class="ad-box">Anúncio</div>
-<div class="ad-box">Anúncio</div>
-</aside>
-<main class="main">
-<div class="room">
-<div class="neon">Flip Mine BETA</div>
-<div class="poster">POSTER SKATE</div>
-<div class="skate"></div>
-<div class="character">SKATISTA</div>
-</div>
-<section class="panels">
-<div class="panel"><h3>Mineração</h3><p>Saldo: 0 FLIP (fake)</p></div>
-<div class="panel"><h3>Energia</h3><p>100% (fake)</p></div>
-<div class="panel"><h3>Inventário</h3><p>Itens beta</p></div>
-</section>
-</main>
-</div>
-<script>
-const miningPanel=document.querySelector('.panel:nth-child(1)');
-let saldo=0;
-miningPanel.addEventListener('click',()=>{
- saldo+=Math.floor(Math.random()*10)+1;
- miningPanel.querySelector('p').textContent=`Saldo: ${saldo} FLIP (fake)`;
-});
-</script>
+<body class="dashboard">
+
+  <!-- MENU TOPO -->
+  <header class="top-menu">
+    <div class="logo">FLIP MINE</div>
+    <nav>
+      <a>Dashboard</a>
+      <a>PTC</a>
+      <a>Games</a>
+      <a>Faucet</a>
+      <a>Carteira</a>
+      <a>Perfil</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+
+    <!-- SIDEBAR ANÚNCIOS -->
+    <aside class="sidebar">
+      <div class="ad">Anúncio</div>
+      <div class="ad">Anúncio</div>
+      <div class="ad">Anúncio</div>
+    </aside>
+
+    <!-- ÁREA CENTRAL -->
+    <main class="game-area">
+      <div class="room">
+        <div class="miner">
+          <img src="https://i.imgur.com/Z8FQKQm.png" alt="Skatista">
+        </div>
+        <div class="balance">Saldo: 0.000 FLIP</div>
+      </div>
+    </main>
+
+  </div>
+
 </body>
 </html>
