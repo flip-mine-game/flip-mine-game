@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Faucet | Skate Faucet</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 
+  <div class="container">
+
+    <h1>🛹 Skate Faucet</h1>
+
+    <div class="balance">
+      Saldo: <span id="balance">0</span> MATIC
+    </div>
+
+    <!-- MÁQUINA -->
+    <div class="miner-machine" id="machine">
+      <div class="fan"></div>
+      <div class="fan"></div>
+      <div class="fan"></div>
+    </div>
+
+    <button id="mineBtn">MINERAR</button>
+
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+
+    <p id="status">Clique para começar a minerar</p>
+
+    <hr>
+
+    <!-- PTC FAKE -->
+    <h2>📺 PTC</h2>
+    <button id="ptcBtn">Ver Anúncio</button>
+    <p id="ptcStatus"></p>
+
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
