@@ -1,113 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flip Mine - Ganhe Satoshi de Graça</title>
-  <style>
-    /* Fundo colorido estilo street/skate */
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #ff5f6d, #ffc371);
-      color: #fff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Mine - Ganhe Satoshis de Graça</title>
+    <!-- Google Fonts para estilo urbano/skate -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Cabeçalho com logo */
-    header {
-      text-align: center;
-      padding: 40px 20px 20px 20px;
-    }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1e1e1e, #121212);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://i.ibb.co/7WGhR6r/skate-background.png'); /* exemplo de skate fundo */
+            background-size: cover;
+            background-position: center;
+        }
 
-    h1 {
-      font-size: 3em;
-      font-weight: bold;
-      text-transform: uppercase;
-      background: linear-gradient(to right, #00f260, #0575e6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 0;
-    }
+        .container {
+            background: rgba(0,0,0,0.7);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            width: 350px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
 
-    h2 {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #fff;
-      text-shadow: 2px 2px 4px #000;
-    }
+        .logo {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 28px;
+            background: linear-gradient(90deg, #ff4d6d, #ffb86c, #6affd1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
 
-    /* Painel de login/criar conta */
-    .panel {
-      background: rgba(0, 0, 0, 0.5);
-      max-width: 400px;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
+        .subtitle {
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
 
-    .panel input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 8px;
-      font-size: 1em;
-    }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
 
-    .panel button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 1em;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(45deg, #ff4b1f, #1fddff);
-      color: #fff;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #ff4d6d, #6affd1);
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
 
-    .panel button:hover {
-      transform: scale(1.05);
-    }
+        .btn:hover {
+            opacity: 0.8;
+        }
 
-    /* Imagem/ilustração estilo skatista */
-    .skate-img {
-      display: block;
-      margin: 0 auto;
-      width: 150px;
-    }
-
-    /* Texto colorido animado */
-    .highlight {
-      background: linear-gradient(to right, #f7971e, #ffd200);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: bold;
-    }
-  </style>
+        .link {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #00ffff;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="logo">Flip Mine</div>
+        <div class="subtitle">Ganhe Satoshis de Graça 100% Gratuito</div>
 
-  <header>
-    <h1>Flip Mine</h1>
-    <h2>Ganhe <span class="highlight">Satoshi</span> de Graça, 100% Gratuito</h2>
-    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991108.png" alt="Skate" class="skate-img">
-  </header>
+        <!-- Formulário de login -->
+        <input type="email" placeholder="Digite seu e-mail" />
+        <input type="password" placeholder="Digite sua senha" />
+        <button class="btn">Entrar / Conectar FaucetPay</button>
 
-  <div class="panel">
-    <h2>Login</h2>
-    <input type="email" placeholder="E-mail" required>
-    <input type="password" placeholder="Senha" required>
-    <button>Entrar</button>
-
-    <h2>Criar Conta</h2>
-    <input type="email" placeholder="E-mail" required>
-    <input type="password" placeholder="Senha" required>
-    <button>Cadastrar</button>
-  </div>
-
+        <div class="link">Criar Conta</div>
+    </div>
 </body>
 </html>
