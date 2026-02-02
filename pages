@@ -2,53 +2,42 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>FlipMineFaucet</title>
+  <title>FlipMineFaucet • Dashboard</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>FlipMineFaucet 🛹</h1>
+<header>
+  <h2>🛹 FlipMineFaucet</h2>
+  <div class="saldo">Saldo: <span id="saldo">0.000000</span> MATIC</div>
+</header>
 
-    <!-- Saldo -->
-    <div class="balance">
-      Saldo: <span id="balance">0.0000</span> MATIC
+<main class="grid">
+
+  <!-- MINERAÇÃO -->
+  <section class="card">
+    <h3>⛏️ Mineração</h3>
+    <img src="../images/miner.svg" id="miner" class="miner">
+    <button onclick="minerar()">Iniciar Mineração</button>
+    <div class="barra">
+      <div id="progress"></div>
     </div>
+  </section>
 
-    <!-- Máquina -->
-    <div class="miner-machine" id="machine">
-      <div class="fan"></div>
-      <div class="fan"></div>
-      <div class="fan"></div>
-    </div>
+  <!-- PTC -->
+  <section class="card">
+    <h3>📢 PTC</h3>
+    <button onclick="ptc()">Ver anúncio (fake)</button>
+  </section>
 
-    <button id="mineBtn">MINERAR</button>
+  <!-- COOLDOWN -->
+  <section class="card">
+    <h3>⏳ Cooldown</h3>
+    <p>Próximo claim em breve…</p>
+  </section>
 
-    <div class="progress">
-      <div id="progressBar"></div>
-    </div>
+</main>
 
-    <p id="status">Clique para começar a minerar</p>
-
-    <hr>
-
-    <!-- PTC Fake -->
-    <h2>📺 PTC</h2>
-    <button id="ptcBtn">Ver Anúncio</button>
-    <p id="ptcStatus"></p>
-
-    <hr>
-
-    <!-- Dashboard mínima -->
-    <div class="dashboard">
-      <h3>Dashboard</h3>
-      <p>Saldo atual: <span id="dashBalance">0.0000</span> MATIC</p>
-      <p>Histórico:</p>
-      <ul id="history"></ul>
-    </div>
-
-  </div>
-
-  <script src="../js/script.js"></script>
+<script src="../js/app.js"></script>
 </body>
 </html>
