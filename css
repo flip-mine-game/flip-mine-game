@@ -1,103 +1,12 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  margin: 0;
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-  color: #fff;
-}
-
-.login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.login-box {
-  background: #111;
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  border: 2px solid #ffcc00;
-}
-
-.login-box h1 {
-  color: #ffcc00;
-}
-
-.login-box input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.login-box button {
-  background: #ff0055;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-header {
-  background: #000;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 3px solid #00ccff;
-}
-
-.saldo {
-  color: #00ff99;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.card {
-  background: #111;
-  padding: 20px;
-  border-radius: 10px;
-  border-left: 5px solid #ff0055;
-}
-
-.card button {
-  background: #00ccff;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.miner {
-  width: 100px;
-  margin: 10px auto;
-  display: block;
-  transition: transform 0.5s;
-}
-
-.miner.active {
-  transform: rotate(10deg) scale(1.1);
-}
-
-.barra {
-  background: #333;
-  height: 10px;
-  margin-top: 10px;
-}
-
-#progress {
-  background: #ffcc00;
-  width: 0%;
-  height: 100%;
-}
+*{box-sizing:border-box} body{margin:0;font-family:monospace;background:#0b0b0b;color:#39ff14}
+.home,body{text-align:center}
+h1{font-size:48px;letter-spacing:3px}
+.btn{padding:12px 18px;margin:6px;border:2px solid #39ff14;background:#39ff14;color:#000;cursor:pointer}
+.btn.ghost{background:transparent;color:#39ff14}
+input{display:block;margin:8px auto;padding:10px;background:#111;color:#39ff14;border:1px solid #39ff14}
+.dash{display:flex}
+.ads{width:120px;background:#111;display:flex;align-items:center;justify-content:center}
+main{flex:1;padding:20px}
+.cards{display:flex;gap:16px;justify-content:center}
+.card{width:130px;height:130px;border-radius:50%;border:3px solid #39ff14;
+display:flex;align-items:center;justify-content:center;box-shadow:0 0 12px #39ff14}
