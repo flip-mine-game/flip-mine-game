@@ -1,9 +1,113 @@
-<!DOCTYPE html><html><head>
-<meta charset="utf-8"><title>Flip Mine</title>
-<link rel="stylesheet" href="css/style.css"></head>
-<body class="home">
-<h1>FLIP MINE</h1>
-<p>Ganhe satoshis de graça • 100% gratuito</p>
-<a class="btn" href="login.html">Entrar</a>
-<a class="btn ghost" href="register.html">Criar conta</a>
-</body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip Mine - Ganhe Satoshi de Graça</title>
+  <style>
+    /* Fundo colorido estilo street/skate */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
+      color: #fff;
+    }
+
+    /* Cabeçalho com logo */
+    header {
+      text-align: center;
+      padding: 40px 20px 20px 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+      text-transform: uppercase;
+      background: linear-gradient(to right, #00f260, #0575e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    /* Painel de login/criar conta */
+    .panel {
+      background: rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .panel input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    .panel button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      font-size: 1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(45deg, #ff4b1f, #1fddff);
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .panel button:hover {
+      transform: scale(1.05);
+    }
+
+    /* Imagem/ilustração estilo skatista */
+    .skate-img {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+    }
+
+    /* Texto colorido animado */
+    .highlight {
+      background: linear-gradient(to right, #f7971e, #ffd200);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Flip Mine</h1>
+    <h2>Ganhe <span class="highlight">Satoshi</span> de Graça, 100% Gratuito</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991108.png" alt="Skate" class="skate-img">
+  </header>
+
+  <div class="panel">
+    <h2>Login</h2>
+    <input type="email" placeholder="E-mail" required>
+    <input type="password" placeholder="Senha" required>
+    <button>Entrar</button>
+
+    <h2>Criar Conta</h2>
+    <input type="email" placeholder="E-mail" required>
+    <input type="password" placeholder="Senha" required>
+    <button>Cadastrar</button>
+  </div>
+
+</body>
+</html>
