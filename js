@@ -1,93 +1,28 @@
-let balance = 0;
-let mining = false;
-const COOLDOWN_TIME = 300; // 5 minutos
+let saldo = 0;
 
-const mineBtn = document.getElementById("mineBtn");
-const ptcBtn = document.getElementById("ptcBtn");
-const balanceEl = document.getElementById("balance");
-const dashBalance = document.getElementById("dashBalance");
-const historyEl = document.getElementById("history");
-const machine = document.getElementById("machine");
-const progressBar = document.getElementById("progressBar");
-const statusText = document.getElementById("status");
-const ptcStatus = document.getElementById("ptcStatus");
+function minerar() {
+  const miner = document.getElementById("miner");
+  const progress = document.getElementById("progress");
 
-// --------- COOLDOWN ---------
-function getRemainingCooldown() {
-  const last = localStorage.getItem("lastMineTime");
-  if (!last) return 0;
-  const diff = Math.floor((Date.now() - Number(last)) / 1000);
-  return Math.max(COOLDOWN_TIME - diff, 0);
-}
+  miner.classList.add("active");
+  progress.style.width = "0%";
 
-function startCooldownTimer() {
-  mineBtn.disabled = true;
-  let remaining = getRemainingCooldown();
+  let p = 0;
+  let interval = setInterval(() => {
+    p += 10;
+    progress.style.width = p + "%";
 
-  const timer = setInterval(() => {
-    remaining = getRemainingCooldown();
-    const min = Math.floor(remaining / 60);
-    const sec = remaining % 60;
-    statusText.innerText = `Aguarde ${min}:${sec.toString().padStart(2, "0")}`;
-
-    if (remaining <= 0) {
-      clearInterval(timer);
-      mineBtn.disabled = false;
-      statusText.innerText = "Clique para começar a minerar";
-    }
-  }, 1000);
-}
-
-// --------- MINERAÇÃO ---------
-mineBtn.onclick = () => {
-  if (mining || getRemainingCooldown() > 0) return;
-
-  mining = true;
-  machine.classList.add("active");
-  statusText.innerText = "Minerando...";
-  progressBar.style.width = "0%";
-
-  let progress = 0;
-  const interval = setInterval(() => {
-    progress += 5;
-    progressBar.style.width = progress + "%";
-
-    if (progress >= 100) {
+    if (p >= 100) {
       clearInterval(interval);
-      mining = false;
-      machine.classList.remove("active");
-
-      balance += 0.0001; // saldo fake
-      balanceEl.innerText = balance.toFixed(4);
-      dashBalance.innerText = balance.toFixed(4);
-
-      // Histórico
-      const li = document.createElement("li");
-      li.innerText = `Mineração: +0.0001 MATIC`;
-      historyEl.prepend(li);
-
-      localStorage.setItem("lastMineTime", Date.now().toString());
-      startCooldownTimer();
+      miner.classList.remove("active");
+      saldo += 0.00001;
+      document.getElementById("saldo").innerText = saldo.toFixed(6);
     }
   }, 300);
-};
+}
 
-// --------- PTC FAKE ---------
-ptcBtn.onclick = () => {
-  ptcStatus.innerText = "Assistindo anúncio...";
-  setTimeout(() => {
-    balance += 0.00005; // saldo fake PTC
-    balanceEl.innerText = balance.toFixed(4);
-    dashBalance.innerText = balance.toFixed(4);
-    ptcStatus.innerText = "PTC concluído! Saldo adicionado.";
-
-    const li = document.createElement("li");
-    li.innerText = `PTC: +0.00005 MATIC`;
-    historyEl.prepend(li);
-  }, 5000);
-};
-
-// Inicia cooldown se existir
-if (getRemainingCooldown() > 0) {
-  startCooldownTimer();
+function ptc() {
+  saldo += 0.000005;
+  document.getElementById("saldo").innerText = saldo.toFixed(6);
+  alert("Anúncio visualizado!");
 }
