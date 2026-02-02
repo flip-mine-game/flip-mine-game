@@ -2,20 +2,20 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Faucet | Skate Faucet</title>
+  <title>FlipMineFaucet</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
   <div class="container">
+    <h1>FlipMineFaucet 🛹</h1>
 
-    <h1>🛹 Skate Faucet</h1>
-
+    <!-- Saldo -->
     <div class="balance">
-      Saldo: <span id="balance">0</span> MATIC
+      Saldo: <span id="balance">0.0000</span> MATIC
     </div>
 
-    <!-- MÁQUINA -->
+    <!-- Máquina -->
     <div class="miner-machine" id="machine">
       <div class="fan"></div>
       <div class="fan"></div>
@@ -32,10 +32,20 @@
 
     <hr>
 
-    <!-- PTC FAKE -->
+    <!-- PTC Fake -->
     <h2>📺 PTC</h2>
     <button id="ptcBtn">Ver Anúncio</button>
     <p id="ptcStatus"></p>
+
+    <hr>
+
+    <!-- Dashboard mínima -->
+    <div class="dashboard">
+      <h3>Dashboard</h3>
+      <p>Saldo atual: <span id="dashBalance">0.0000</span> MATIC</p>
+      <p>Histórico:</p>
+      <ul id="history"></ul>
+    </div>
 
   </div>
 
