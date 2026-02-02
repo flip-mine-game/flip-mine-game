@@ -5,17 +5,22 @@
   <title>FlipMineFaucet</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <div class="container">
-    <h1>FlipMineFaucet 🛹</h1>
-    <p>Ganhe MATIC gratuitamente!</p>
+<body class="login-page">
 
-    <div class="login">
-      <input type="text" id="wallet" placeholder="Insira seu endereço FaucetPay">
-      <a href="pages/faucet.html">
-        <button>Login com FaucetPay</button>
-      </a>
-    </div>
+  <div class="login-box">
+    <h1>🛹 FlipMineFaucet</h1>
+    <p>Underground • Skate • Crypto</p>
+
+    <input type="text" placeholder="Endereço da carteira (FaucetPay)">
+    <button onclick="entrar()">Entrar na Faucet</button>
+
+    <small>Projeto BETA • saldo demonstrativo</small>
   </div>
+
+  <script>
+    function entrar() {
+      window.location.href = "pages/faucet.html";
+    }
+  </script>
 </body>
 </html>
