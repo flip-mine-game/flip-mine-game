@@ -1,100 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flip Mine - Ganhe Satoshis de Graça</title>
-    <!-- Google Fonts para estilo urbano/skate -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #1e1e1e, #121212);
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-image: url('https://i.ibb.co/7WGhR6r/skate-background.png'); /* exemplo de skate fundo */
-            background-size: cover;
-            background-position: center;
-        }
-
-        .container {
-            background: rgba(0,0,0,0.7);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            width: 350px;
-            box-shadow: 0 0 20px rgba(255,255,255,0.2);
-        }
-
-        .logo {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 28px;
-            background: linear-gradient(90deg, #ff4d6d, #ffb86c, #6affd1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: #ffd700;
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-
-        input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            border: none;
-            outline: none;
-            font-size: 14px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(90deg, #ff4d6d, #6affd1);
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            color: #fff;
-            cursor: pointer;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            opacity: 0.8;
-        }
-
-        .link {
-            margin-top: 15px;
-            font-size: 12px;
-            color: #00ffff;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flip Mine - Ganhe Satoshis de Graça</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+        font-family: 'Roboto', sans-serif;
+        min-height: 100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background: linear-gradient(135deg, #1e1e1e, #121212);
+        background-image: url('https://i.ibb.co/7WGhR6r/skate-background.png'); /* Fundo skate/grafite */
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+    }
+    .container {
+        background: rgba(0,0,0,0.8);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        width: 380px;
+        box-shadow: 0 0 25px rgba(255,255,255,0.3);
+    }
+    .logo {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 30px;
+        background: linear-gradient(90deg, #ff4d6d, #ffb86c, #6affd1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 12px;
+    }
+    .subtitle {
+        color: #ffd700;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px #000;
+    }
+    input[type="email"], input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+    .btn {
+        width: 100%;
+        padding: 12px;
+        margin-top: 5px;
+        background: linear-gradient(90deg, #ff4d6d, #6affd1);
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        color: #fff;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.3s;
+        text-shadow: 1px 1px #000;
+    }
+    .btn:hover {
+        opacity: 0.85;
+    }
+    .link {
+        margin-top: 15px;
+        font-size: 12px;
+        color: #00ffff;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+</style>
 </head>
 <body>
     <div class="container">
         <div class="logo">Flip Mine</div>
         <div class="subtitle">Ganhe Satoshis de Graça 100% Gratuito</div>
 
-        <!-- Formulário de login -->
-        <input type="email" placeholder="Digite seu e-mail" />
-        <input type="password" placeholder="Digite sua senha" />
+        <input type="email" placeholder="Digite seu e-mail">
+        <input type="password" placeholder="Digite sua senha">
         <button class="btn">Entrar / Conectar FaucetPay</button>
 
         <div class="link">Criar Conta</div>
